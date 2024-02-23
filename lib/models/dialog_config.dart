@@ -50,12 +50,7 @@ class DialogConfig {
                 fontSize: 14,
                 fontWeight: FontWeight.w600),
         selectedIcon = selectedIcon ??
-            Padding(
-              padding: const EdgeInsets.only(left: 10),
-              child: Image.asset(
-                "packages/intl_phone_number_field/assets/check.png",
-                width: 20,
-                fit: BoxFit.fitWidth,
-              ),
+            const Padding(
+              padding: EdgeInsets.only(left: 10),
             );
 }
