@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 // ignore: depend_on_referenced_packages
-import 'package:intl_phone_number_field/intl_phone_number_field.dart';
+import 'package:international_phone_number_field/international_phone_number_field.dart' as international_phone_number_field;
 
 void main() {
   runApp(const MyApp());
@@ -55,12 +55,12 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                InternationalPhoneNumberInput(
+                international_phone_number_field.InternationalPhoneNumberInput(
                   height: 60,
                   controller: controller,
                   inputFormatters: const [],
-                  formatter: MaskedInputFormatter('### ### ## ##'),
-                  initCountry: CountryCodeModel(
+                  formatter: international_phone_number_field.MaskedInputFormatter('### ### ## ##'),
+                  initCountry: international_phone_number_field.CountryCodeModel(
                       name: "United States", dial_code: "+1", code: "US"),
                   betweenPadding: 23,
                   onInputChanged: (phone) {
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     print(phone.rawDialCode);
                   },
                   loadFromJson: loadFromJson,
-                  dialogConfig: DialogConfig(
+                  dialogConfig: international_phone_number_field.DialogConfig(
                     backgroundColor: const Color(0xFF444448),
                     searchBoxBackgroundColor: const Color(0xFF56565a),
                     searchBoxIconColor: const Color(0xFFFAFAFA),
@@ -105,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
-                  countryConfig: CountryConfig(
+                  countryConfig: international_phone_number_field.CountryConfig(
                       decoration: BoxDecoration(
                         border: Border.all(
                             width: 2, color: const Color(0xFF3f4046)),
@@ -123,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     }
                     return null;
                   },
-                  phoneConfig: PhoneConfig(
+                  phoneConfig: international_phone_number_field.PhoneConfig(
                     focusedColor: const Color(0xFF6D59BD),
                     enabledColor: const Color(0xFF6D59BD),
                     errorColor: const Color(0xFFFF5494),

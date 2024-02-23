@@ -1,4 +1,4 @@
-name: intl_phone_number_field_example
+name: international_phone_number_field_example
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -48,8 +48,9 @@ dev_dependencies:
   flutter_lints: ^2.0.0
 
 dependency_overrides:
-  intl_phone_number_field:
-    path: ..
+  international_phone_number_field:
+    git:
+      url: https://github.com/adhamhaithameid/international_phone_number_field.git
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
