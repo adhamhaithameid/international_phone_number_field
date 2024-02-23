@@ -1,6 +1,6 @@
 // ignore_for_file: non_constant_identifier_names
 
-library intl_phone_number_field;
+library international_phone_number_field;
 
 import 'dart:convert';
 import 'dart:developer';
