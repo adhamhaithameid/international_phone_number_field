@@ -1,15 +1,18 @@
-name: international_phone_number_field
-description: "A new Flutter project."
-version: 0.0.1
-homepage:
+name: intl_phone_number_field
+description: A customised Flutter TextFormField to input international phone number along with country code.
+version: 0.1.8
+homepage: https://github.com/FlutterWay/intl_phone_number_field
 
 environment:
-  sdk: '>=3.2.6 <4.0.0'
+  sdk: '>=2.18.5 <4.0.0'
   flutter: ">=1.17.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  json_annotation: ^4.8.1
+  flutter_multi_formatter: ^2.11.14
+  country_flags: ^2.1.1
 
 dev_dependencies:
   flutter_test:
@@ -23,16 +26,14 @@ dev_dependencies:
 flutter:
 
   # To add assets to your package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see
   # https://flutter.dev/assets-and-images/#from-packages
   #
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
-
+  assets:
+    - packages/intl_phone_number_field/assets/check.png
   # To add custom fonts to your package, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
