@@ -40,7 +40,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       {super.key,
       TextEditingController? controller,
       this.height = 60,
-      this.inputFormatters = const [WhitelistingTextInputFormatter.digitsOnly],
+      this.inputFormatters = const [],
       CountryCodeModel? initCountry,
       this.betweenPadding = 23,
       this.onInputChanged,
