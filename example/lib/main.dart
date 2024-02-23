@@ -80,13 +80,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     flatFlag: true,
                     topBarColor: const Color(0xFF1B1C24),
                     selectedItemColor: const Color(0xFF56565a),
-                    selectedIcon: Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Image.asset(
-                        "assets/check.png",
-                        width: 20,
-                        fit: BoxFit.fitWidth,
-                      ),
+                    selectedIcon: const Padding(
+                      padding: EdgeInsets.only(left: 10),
                     ),
                     textStyle: TextStyle(
                         color: const Color(0xFFFAFAFA).withOpacity(0.7),
