@@ -30,12 +30,12 @@ class InternationalPhoneNumberInput extends StatefulWidget {
   final CountryConfig countryConfig;
   final PhoneConfig phoneConfig;
   final CountryCodeModel initCountry;
-  final dynamic Function(IntPhoneNumber number)? onInputChanged;
+  final dynamic Function(InternationalPhoneNumberInput number)? onInputChanged;
   final double betweenPadding;
   final MaskedInputFormatter? formatter;
   final List<TextInputFormatter> inputFormatters;
   final Future<String?> Function()? loadFromJson;
-  final String? Function(IntPhoneNumber number)? validator;
+  final String? Function(InternationalPhoneNumberInput number)? validator;
   InternationalPhoneNumberInput(
       {super.key,
       TextEditingController? controller,
@@ -49,7 +49,7 @@ class InternationalPhoneNumberInput extends StatefulWidget {
       this.validator,
       DialogConfig? dialogConfig,
       CountryConfig? countryConfig,
-      PhoneConfig? phoneConfig})
+      PhoneConfig? phoneConfig, required String code, required String dial_code, required String number})
       : dialogConfig = dialogConfig ?? DialogConfig(),
         controller = controller ?? TextEditingController(),
         countryConfig = countryConfig ?? CountryConfig(),
@@ -83,7 +83,7 @@ class _InternationalPhoneNumberInputState
     node = widget.phoneConfig.focusNode ?? FocusNode();
     if (widget.phoneConfig.autovalidateMode == AutovalidateMode.always &&
         widget.validator != null) {
-      String? error = widget.validator!(IntPhoneNumber(
+      String? error = widget.validator!(InternationalPhoneNumberInput(
           code: selected.code,
           dial_code: selected.dial_code,
           number: widget.controller.text.trimLeft().trimRight()));
@@ -106,7 +106,7 @@ class _InternationalPhoneNumberInputState
         widget.phoneConfig.autovalidateMode ==
             AutovalidateMode.onUserInteraction &&
         widget.validator != null) {
-      String? error = widget.validator!(IntPhoneNumber(
+      String? error = widget.validator!(InternationalPhoneNumberInput(
           code: selected.code,
           dial_code: selected.dial_code,
           number: widget.controller.text.trimLeft().trimRight()));
@@ -150,7 +150,7 @@ class _InternationalPhoneNumberInputState
                                       selected = countryCodeModel;
                                     });
                                     if (widget.onInputChanged != null) {
-                                      widget.onInputChanged!(IntPhoneNumber(
+                                      widget.onInputChanged!(InternationalPhoneNumberInput(
                                           code: selected.code,
                                           dial_code: selected.dial_code,
                                           number: widget.controller.text
@@ -226,13 +226,13 @@ class _InternationalPhoneNumberInputState
                   borderWidth: widget.phoneConfig.borderWidth,
                   onChanged: (text) {
                     if (widget.onInputChanged != null) {
-                      widget.onInputChanged!(IntPhoneNumber(
+                      widget.onInputChanged!(InternationalPhoneNumberInput(
                           code: selected.code,
                           dial_code: selected.dial_code,
                           number: text.trimLeft().trimRight()));
                     }
                     if (widget.validator != null) {
-                      String? error = widget.validator!(IntPhoneNumber(
+                      String? error = widget.validator!(InternationalPhoneNumberInput(
                           code: selected.code,
                           dial_code: selected.dial_code,
                           number: text.trimLeft().trimRight()));
@@ -287,13 +287,17 @@ class _InternationalPhoneNumberInputState
   }
 }
 
-class internationalphonenumberfield {
-  String code, dial_code, number;
-  IntPhoneNumber(
-      {required this.code, required this.dial_code, required this.number});
-  String get fullNumber => "$dial_code $number";
+abstract class InternationalPhoneNumberField {
+  late String code, dialCode, number;
+
+  InternationalPhoneNumberField({
+    required this.code,
+    required this.dialCode,
+    required this.number,
+  });
+
+  String get fullNumber => "$dialCode $number";
   String get rawNumber => number.replaceAll(" ", "");
-  String get rawDialCode => dial_code.replaceAll("+", "");
-  String get rawFullNumber =>
-      fullNumber.replaceAll(" ", "").replaceAll("+", "");
+  String get rawDialCode => dialCode.replaceAll("+", "");
+  String get rawFullNumber => fullNumber.replaceAll(" ", "").replaceAll("+", "");
 }
