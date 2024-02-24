@@ -287,7 +287,7 @@ class _InternationalPhoneNumberInputState
   }
 }
 
-class IntPhoneNumber {
+class internationalphonenumberfield {
   String code, dial_code, number;
   IntPhoneNumber(
       {required this.code, required this.dial_code, required this.number});
