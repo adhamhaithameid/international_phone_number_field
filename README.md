@@ -119,6 +119,7 @@ SelectorConfig({
     this.setSelectorButtonAsPrefixIcon = false,
 });
 ```
+<!--
 ## Example
 
 Here's a simple example demonstrating the usage of International Phone Number Field:
@@ -128,6 +129,7 @@ Here's a simple example demonstrating the usage of International Phone Number Fi
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or pull requests on GitHub.
+-->
 
 ## Credits
 
@@ -139,7 +141,7 @@ For any questions or issues, please open an [issue](https://github.com/adhamhait
 
 ## Disclaimer
 
-This package is provided as is, without warranty of any kind. Use it at your own risk.
+This package is provided as it is, without warranty of any kind. Use it at your own risk.
 
 ```
 
