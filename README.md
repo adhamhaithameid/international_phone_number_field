@@ -119,30 +119,3 @@ SelectorConfig({
     this.setSelectorButtonAsPrefixIcon = false,
 });
 ```
-<!--
-## Example
-
-Here's a simple example demonstrating the usage of International Phone Number Field:
-
-![Example](example.gif)
-
-## Contributing
-
-Contributions are welcome! Feel free to open issues or pull requests on GitHub.
--->
-
-## Credits
-
-This package is maintained by [Adham Haitham Eid](https://github.com/adhamhaithameid).
-
-## Support
-
-For any questions or issues, please open an [issue](https://github.com/adhamhaithameid/international_phone_number_field/issues) on GitHub.
-
-## Disclaimer
-
-This package is provided as it is, without warranty of any kind. Use it at your own risk.
-
-```
-
-Replace `"^1.0.0"` with the appropriate version of your package. Ensure to update the links and placeholders with actual information about your package and yourself. This template provides usage instructions, examples, contribution guidelines, and support information specific to your Flutter package.
